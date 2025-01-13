@@ -49,3 +49,8 @@ jobs:
 
           # Define a better name for the final binary
           BIN_RELEASE="${PROJECT_NAME}-${{ matrix.name }}"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: target/${{ matrix.target }}/release/${PROJECT_NAME}
